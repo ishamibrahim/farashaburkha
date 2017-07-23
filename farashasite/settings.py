@@ -25,7 +25,7 @@ SECRET_KEY = '9c@#pn*cns=57)%_c_v+b4uo235bmzv7q_vm=yc#_)a^eq^4(_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0']
 
 
 # Application definition
@@ -54,7 +54,7 @@ ROOT_URLCONF = 'farashasite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(os.path.dirname(__file__), "../farasha_app/templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,3 +118,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR + "/farasha_app/static"
+
+
