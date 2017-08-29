@@ -18,7 +18,8 @@ from django.contrib import admin
 from farasha_app import views
 
 urlpatterns = [
+    url(r'^$', views.index, name='index'),
     url(r'^admin/', admin.site.urls),
     url(r'^index/', views.index, name='index'),
-    url(r'^$', views.index, name='index')
+    url(r'^about/', views.about, name='about')
 ]

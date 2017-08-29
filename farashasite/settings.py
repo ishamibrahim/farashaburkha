@@ -25,12 +25,13 @@ SECRET_KEY = '9c@#pn*cns=57)%_c_v+b4uo235bmzv7q_vm=yc#_)a^eq^4(_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'farasha_app.apps.FarashaAppConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -75,8 +76,12 @@ WSGI_APPLICATION = 'farashasite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'farasha_db',
+        'USER': 'isham',
+        'PASSWORD': 'Accion',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 
